@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bababooey.world</title>
+    <title>b a b a b o o e y . w o r l d</title>
 	<style>
 	  body {
 		margin: 0;
@@ -28,25 +28,47 @@ import { Image } from 'astro:assets';
 		position: absolute;
 		white-space: nowrap;
 		will-change: transform;
+	  }
+
+	  .track-left {
 		animation: marquee 32s linear infinite;
+	  }
+
+	  .track-right {
+		animation: marquee-right 32s linear infinite;
+	  }
+
+	  .spinner {
+		will-change: transform;
+		animation: spin 16s linear infinite;
 	  }
 
 	  @keyframes marquee {
 		from { transform: translateX(0); }
 		to { transform: translateX(-50%); }
 	  }
+
+	  @keyframes marquee-right {
+		from { transform: translateX(-50%); }
+		to { transform: translateX(0); }
+	  }
+
+	  @keyframes spin {
+		from {transform: rotate(0deg);}
+		to {transform: rotate(-360deg);}
+	  }
 	  </style>
   </head>
   <body class="flex flex-col w-screen h-screen items-center justify-center">
     <div class="marquee">
-	  <div class="track">
+	  <div class="track track-left">
 		<div class="content">bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey</div>
 	  </div>
 	</div>
-	<Image src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="bababooey makes the world go round" width={700} height={700} />
+	<Image src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="bababooey makes the world go round" width={700} height={700} class="spinner" />
   </body>
   <div class="marquee">
-	<div class="track">
+	<div class="track track-right">
 	  <div class="content">bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey</div>
 	</div>
   </div>

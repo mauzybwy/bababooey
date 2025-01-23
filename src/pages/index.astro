@@ -1,11 +1,13 @@
 ---
 import { Image } from 'astro:assets';
+import earthGif from "../images/earth.gif"
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>b a b a b o o e y . w o r l d</title>
+	<link rel="stylesheet" href="/styles/global.css" />
 	<style>
 	  body {
 		margin: 0;
@@ -31,7 +33,7 @@ import { Image } from 'astro:assets';
 	  }
 
 	  .track-left {
-		animation: marquee 32s linear infinite;
+		animation: marquee-left 32s linear infinite;
 	  }
 
 	  .track-right {
@@ -43,7 +45,7 @@ import { Image } from 'astro:assets';
 		animation: spin 16s linear infinite;
 	  }
 
-	  @keyframes marquee {
+	  @keyframes marquee-left {
 		from { transform: translateX(0); }
 		to { transform: translateX(-50%); }
 	  }
@@ -65,7 +67,13 @@ import { Image } from 'astro:assets';
 		<div class="content">bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey bababooey</div>
 	  </div>
 	</div>
-	<Image src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="bababooey makes the world go round" width={700} height={700} class="spinner" />
+	<Image
+	  src={earthGif}
+	  alt="bababooey makes the world go round"
+	  width={700}
+	  height={700}
+	  class="spinner"
+	/>
   </body>
   <div class="marquee">
 	<div class="track track-right">
